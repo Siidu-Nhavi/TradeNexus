@@ -2,8 +2,8 @@ import React from 'react';
 
 function Pricing() {
     return ( 
-        <h1>Pricing</h1>
+        <h1>pricing <i class="fa-solid fa-children"></i> </h1>
      );
 }
 
-export default Pricin;
+export default Pricing;
