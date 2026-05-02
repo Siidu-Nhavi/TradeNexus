@@ -1,5 +1,6 @@
 import React from 'react';
 import './css/Hero.css';
+import { Link } from 'react-router-dom';
 
 
 function Hero() {
@@ -21,9 +22,9 @@ function Hero() {
                         Online platform to invest in stocks, derivatives, mutual funds, and more
                     </p>
 
-                    <a href="/signup" className="btn btn-primary fs-5 px-4 py-2">
+                    <Link to="/signup" className="btn btn-primary fs-5 px-4 py-2">
                         Sign Up
-                    </a>
+                    </Link>
                 </div>
             </div>
         </header>

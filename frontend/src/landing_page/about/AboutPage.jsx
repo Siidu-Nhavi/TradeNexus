@@ -1,14 +1,16 @@
 import React from 'react';
 import Hero from './Hero';
 import Team from './Team';
+import TeamMembers from'./TeamMembers';
 
-function About() {
-    return (  
+function AboutPage() {
+    return (
         <>
             <Hero />
             <Team />
+            <TeamMembers />
         </>
     );
 }
 
-export default About;
+export default AboutPage;

@@ -10,7 +10,29 @@ function Footer() {
                         <p className='mt-3 text-muted'> <b>&copy;</b> 2010-2014, Not Zerodha Broking Ltd.<br /> All rights reserved.</p>
                     </div>
                     <div className="col">
-                        <p style={{ color: "#0D6EFD" }}>Company</p>
+                        <h3 style={{ color: "#424242", font: "18px", fontFamily: "Inter,serif" }}>Account</h3>
+                        <a href="" className="d-block text-decoration-none text-muted mb-1 link-primary">Open an account</a><br />
+                        <a href="" className="d-block text-decoration-none text-muted mb-1 link-primary">Minor demat account</a><br />
+                        <a href="" className="d-block text-decoration-none text-muted link-primary">NRI demat account</a><br />
+                        <a href="" className="d-block text-decoration-none text-muted mb-1 link-primary">HUF demat account</a><br />
+                        <a href="" className="d-block text-decoration-none text-muted mb-1 link-primary">Commodity</a><br />
+                        <a href="" className="d-block text-decoration-none text-muted link-primary">Dematerialisation</a><br />
+                        <a href="" className="d-block text-decoration-none text-muted link-primary">Fund transfer</a><br />
+                        <a href="" className="d-block text-decoration-none text-muted link-primary">MTF</a>
+                    </div>
+                    <div className="col">
+                        <h3 style={{ color: "#424242", font: "18px", fontFamily: "Inter,serif" }}>Support</h3>
+                        <a href="" className="d-block text-decoration-none text-muted mb-1 link-primary">Contact us</a><br />
+                        <a href="" className="d-block text-decoration-none text-muted mb-1 link-primary">Support portal</a><br />
+                        <a href="" className="d-block text-decoration-none text-muted mb-1 link-primary">How to file a complaint?</a><br />
+                        <a h href="" className="d-block text-decoration-none text-muted mb-1 link-primary">Status of your complaints</a><br />
+                        <a href="" className="d-block text-decoration-none text-muted link-primary">Bulletin</a><br />
+                        <a href="" className="d-block text-decoration-none text-muted mb-1 link-primary">Circular</a><br />
+                        <a h href="" className="d-block text-decoration-none text-muted mb-1 link-primary">Z-Connect blog</a><br />
+                        <a href="" className="d-block text-decoration-none text-muted link-primary">Downloads</a>
+                    </div>
+                    <div className="col">
+                        <h3 style={{ color: "#424242", font: "18px", fontFamily: "Inter,serif" }}>Company</h3>
                         <a href="" className="d-block text-decoration-none text-muted mb-1 link-primary">About</a><br />
                         <a href="" className="d-block text-decoration-none text-muted mb-1 link-primary">Products</a><br />
                         <a href="" className="d-block text-decoration-none text-muted mb-1 link-primary">Pricing</a><br />
@@ -20,20 +42,17 @@ function Footer() {
                         <a href="" className="d-block text-decoration-none text-muted mb-1 link-primary">Press & media</a><br />
                         <a href="" className="d-block text-decoration-none text-muted link-primary">Zerodha cares(CSR)</a>
                     </div>
-                    <div className="col">
-                        <p style={{ color: "#0D6EFD" }}>Support</p>
-                        <a href="" className="d-block text-decoration-none text-muted mb-1 link-primary">Contact</a><br />
-                        <a href="" className="d-block text-decoration-none text-muted mb-1 link-primary">Support portal</a><br />
-                        <a href="" className="d-block text-decoration-none text-muted mb-1 link-primary">Z-Connect blog</a><br />
-                        <a h href="" className="d-block text-decoration-none text-muted mb-1 link-primary">List of charges</a><br />
-                        <a href="" className="d-block text-decoration-none text-muted link-primary">Downloads & resources</a>
 
-                    </div>
                     <div className="col">
-                        <p style={{ color: "#0D6EFD" }}>Account</p>
-                        <a href="" className="d-block text-decoration-none text-muted mb-1 link-primary">Open an account</a><br />
-                        <a href="" className="d-block text-decoration-none text-muted mb-1 link-primary">fund transfer</a><br />
-                        <a href="" className="d-block text-decoration-none text-muted link-primary">60 day challenge</a>
+                        <h3 style={{ color: "#424242", font: "18px", fontFamily: "Inter,serif" }}>Quick links</h3>
+                        <a href="" className="d-block text-decoration-none text-muted mb-1 link-primary">Upcoming IPOs</a><br />
+                        <a href="" className="d-block text-decoration-none text-muted mb-1 link-primary">Brokerage charges</a><br />
+                        <a href="" className="d-block text-decoration-none text-muted mb-1 link-primary">Market holidays</a><br />
+                        <a h href="" className="d-block text-decoration-none text-muted mb-1 link-primary">Economic calendar</a><br />
+                        <a href="" className="d-block text-decoration-none text-muted mb-1 link-primary">Calculators</a><br />
+                        <a href="" className="d-block text-decoration-none text-muted mb-1 link-primary">Markets</a><br />
+                        <a href="" className="d-block text-decoration-none text-muted mb-1 link-primary">Sectors</a><br />
+                        <a href="" className="d-block text-decoration-none text-muted link-primary">Gift Nifty</a>
                     </div>
                 </div>
                 <div className="mt-5  text-muted" style={{ fontSize: "1rem" }}>
@@ -59,6 +78,8 @@ function Footer() {
                     <a href="#" className="text-decoration-none text-muted link-primary">Policies & procedures</a>
                     <a href="#" className="text-decoration-none text-muted link-primary">Privacy & policy</a>
                     <a href="#" className="text-decoration-none text-muted link-primary">Disclosure</a>
+                    <a href="#" className="text-decoration-none text-muted link-primary">For investor's attention </a>
+                    <a href="#" className="text-decoration-none text-muted link-primary">Investor charter</a>
                 </div>
 
             </div>
