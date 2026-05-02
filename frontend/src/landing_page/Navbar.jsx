@@ -1,13 +1,14 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
     return (
         <nav className="navbar navbar-expand-lg border-bottom bg-white sticky-top">
             <div className="container-fluid">
                 {/* Logo */}
-                <a className="navbar-brand" href="#">
+                <Link className="navbar-brand" to="/">
                     <img src="/Assets/logo.svg" alt="Logo" style={{ width: "120px" }} />
-                </a>
+                </Link>
 
                 {/* Toggler for mobile */}
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse"
@@ -20,19 +21,19 @@ function Navbar() {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link fw-semibold text-primary" href="#">Signup</a>
+                            <Link className="nav-link fw-semibold text-primary" to ="/signup">Signup</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link fw-semibold text-primary" href="#">About</a>
+                            <Link className="nav-link fw-semibold text-primary" to ="/about">About</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link fw-semibold text-primary" href="#">Product</a>
+                            <Link className="nav-link fw-semibold text-primary" to ="/product">Product</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link fw-semibold text-primary" href="#">Pricing</a>
+                            <Link className="nav-link fw-semibold text-primary" to ="/pricing">Pricing</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link fw-semibold text-primary" href="#">Support</a>
+                            <Link className="nav-link fw-semibold text-primary" to ="/support">Support</Link>
                         </li>
                     </ul>
                 </div>
