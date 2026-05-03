@@ -45,7 +45,7 @@ function Awards() {
                                 </li>
 
                                 <li>
-                                    <p>Bonds and Government</p>
+                                    <p>Bonds & Government</p>
                                 </li>
 
                             </ul>
