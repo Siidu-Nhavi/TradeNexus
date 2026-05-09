@@ -1,9 +1,20 @@
-import React from "react";
+import React,{useState,useEffect} from "react";
+import { use } from "react";
 
 function Holdings(){
+
+  const [allHoldings,setAllHoldings] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:5001/allHoldings")
+      .then((response) => response.json())
+      .then((data) => setAllHoldings(data))
+      .catch((error) => console.error("Error fetching holdings:", error));
+  }, []);
+  console.log(allHoldings);
+
   return (
     <>
-      <h3 className="title">Holdings (13)</h3>
+      <h3 className="title">Holdings({allHoldings.length}) </h3>
 
       <div className="order-table">
         <table>
@@ -43,5 +54,7 @@ function Holdings(){
     </>
   );
 };
+
+
 
 export default Holdings;
