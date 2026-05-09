@@ -1,0 +1,15 @@
+
+
+code{
+    font-family: source-code-pro, Menlo,Monaco,Consolas,'Courier New',monospace;
+}
+
+#supportHero{
+    background-color: #dedee3;
+}
+
+#supportWrapper{
+    display:flex;
+    justify-content: space-between;
+    margin: 0 150px;
+}

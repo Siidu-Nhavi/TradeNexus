@@ -1,0 +1,1266 @@
+/* Base document reset */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Monospace code font stack */
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+
+/* Dashboard shell layout */
+.dashboard-container {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+/* Main content panel */
+.content {
+  flex-basis: 68%;
+  height: 100%;
+  box-sizing: border-box;
+  overflow-y: auto;
+  padding: 3% 2%;
+}
+
+/* Funds summary container */
+.funds {
+  width: 100%;
+  text-align: right;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+/* Funds summary text */
+.funds p {
+  font-size: 0.8rem;
+  color: rgb(179, 179, 179);
+  margin-right: 8px;
+}
+
+/* Shared button base */
+.btn {
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 2px;
+  color: #fff;
+  margin-right: 2px;
+  margin-left: 2px;
+}
+
+/* Success button variant */
+.btn-green {
+  background: #4caf50;
+}
+
+/* Primary action button variant */
+.btn-blue {
+  background: #4184f3;
+}
+
+/* Dashboard row layout */
+.row {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 5%;
+}
+
+/* Column wrapper */
+.col {
+  flex-basis: 48%;
+  text-align: left;
+}
+
+/* Inline label row inside a column */
+.col span {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+/* Section icon inside a label row */
+.section-icon {
+  transform: scale(0.8);
+  color: rgb(66, 56, 56);
+  padding: 0;
+  margin: 0;
+  margin-right: 10px;
+}
+
+/* Label text inside a column span */
+.col span p {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+/* Card or table wrapper */
+.table {
+  border: 1px solid #ddd;
+  padding: 5% 8%;
+}
+
+/* Table content row */
+.table .data {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Table child spacing */
+.table .data > * {
+  margin-bottom: 5%;
+}
+
+/* Table lead value text */
+.table .data p:first-child {
+  font-size: 1rem;
+  color: rgb(151, 151, 151);
+}
+
+/* Important numeric value */
+.imp {
+  font-size: 1.5rem;
+  color: #313131;
+}
+
+/* Accent blue text */
+.colored {
+  color: #4184f3;
+}
+
+/* Divider line inside table */
+.table hr {
+  border: none;
+  background: #d1d1d1;
+  height: 0.5px;
+  margin-bottom: 5%;
+}
+
+/* Commodity section wrapper */
+.commodity {
+  padding: 2% 8%;
+  text-align: center;
+}
+
+/* Commodity helper text */
+.commodity p {
+  margin-bottom: 10%;
+  color: #c9c9c9;
+}
+
+/* Button hover states */
+.btn-blue:hover {
+  background: #74a7fa;
+}
+
+/* Button hover states */
+.btn-green:hover {
+  background: #7bdd7f;
+}
+
+/* Shared section title */
+.title {
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: rgb(71, 71, 71);
+  margin-bottom: 2%;
+}
+
+/* Orders table container */
+.order-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Orders table row separators */
+.order-table tr {
+  border-top: 1px solid #f1f1f1;
+  border-bottom: 1px solid #f1f1f1;
+}
+
+/* Orders table headers */
+.order-table th {
+  text-align: right;
+  padding: 15px 10px;
+  color: rgb(145, 145, 145);
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+
+/* Align the first orders column to the left */
+.order-table tr th:first-child,
+.order-table tr td:first-child {
+  text-align: left;
+}
+
+/* First and fourth column divider */
+.order-table tr th:nth-child(1),
+.order-table tr th:nth-child(4) {
+  border-right: 1px solid #f1f1f1;
+}
+
+/* First and fourth body column divider */
+.order-table tr td:nth-child(1),
+.order-table tr td:nth-child(4) {
+  border-right: 1px solid #f1f1f1;
+}
+
+/* Narrow trailing cell text */
+.order-table tr td:last-child {
+  font-size: 0.6rem;
+}
+
+/* Orders table cells */
+.order-table td {
+  padding: 10px 10px;
+  text-align: right;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: rgb(73, 73, 73);
+}
+
+/* Left-aligned utility class */
+.align-left {
+  text-align: left;
+}
+
+/* Profit cell color */
+.order-table td.profit {
+  color: rgb(72, 194, 55);
+}
+
+/* Loss cell color */
+.order-table td.loss {
+  color: rgb(250, 118, 78);
+}
+
+/* Summary row layout */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+
+/* Summary column width */
+.col {
+  flex-basis: 33%;
+}
+
+/* Summary metric heading */
+.col h5 {
+  font-size: 1.8rem;
+  color: rgb(71, 71, 71);
+  font-weight: 300;
+}
+
+/* Summary metric sublabel */
+.col h5 span {
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+/* Summary description text */
+.col p {
+  font-size: 0.8rem;
+  color: rgb(153, 153, 153);
+  font-weight: 300;
+  margin-top: 2%;
+}
+
+/* Highlight the last summary metric */
+.row .col:last-child h5 {
+  color: rgb(72, 194, 55);
+}
+
+/* Item hover state */
+.item:hover {
+  cursor: pointer;
+}
+
+/* Top navigation container */
+.menu-container {
+  flex-basis: 68%;
+  height: 100%;
+  padding: 10px 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Dashboard logo image */
+.logo {
+  width: 30px;
+  height: 20px;
+}
+
+/* Menu group layout */
+.menus {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* Menu list reset */
+.menus ul {
+  list-style-type: none;
+}
+
+/* Individual menu item spacing */
+.menus li {
+  display: inline-block;
+  margin-right: 30px;
+  text-decoration: none;
+}
+
+/* Menu link text */
+.menu {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: rgb(70, 70, 70);
+}
+
+/* Selected menu state */
+.menu.selected {
+  color: rgb(245, 104, 52);
+}
+
+/* Vertical divider line */
+hr {
+  border-left: 0.8px solid rgb(243, 242, 242);
+  height: 30px;
+}
+
+/* Profile container */
+.profile {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-left: 20px;
+}
+
+/* Profile avatar badge */
+.profile .avatar {
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  position: relative;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: rgb(221, 139, 221);
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  text-align: center;
+  display: flex;
+  background: rgb(252, 229, 252);
+  margin-right: 8px;
+}
+
+/* Profile username text */
+.profile .username {
+  font-size: 0.8rem;
+  font-weight: 300;
+}
+
+/* Menu hover state */
+.menu:hover {
+  color: rgb(245, 104, 52);
+}
+
+/* Profile hover target */
+.profile:hover {
+  cursor: pointer;
+}
+
+/* Profile hover username state */
+.profile:hover .username {
+  cursor: pointer;
+  color: rgb(223, 91, 43);
+}
+
+/* Empty orders page container */
+.orders {
+  width: 100%;
+  height: 90vh;
+}
+
+/* Empty orders state layout */
+.no-orders {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Empty state icon */
+.no-orders .icon {
+  transform: scale(4);
+  color: rgb(173, 173, 173);
+  display: block;
+}
+
+/* Empty state helper text */
+.no-orders p {
+  margin-top: 6%;
+  color: rgb(173, 173, 173);
+  font-size: 1rem;
+  font-weight: 300;
+}
+
+/* Primary button style for empty states */
+.btn {
+  text-decoration: none;
+  background: rgb(77, 77, 248);
+  padding: 10px 20px;
+  border-radius: 2px;
+  color: #fff;
+  margin-top: 2%;
+}
+
+/* Button hover state */
+.btn:hover {
+  background: rgb(110, 110, 253);
+}
+
+/* Section heading */
+.title {
+  font-size: 1.3rem;
+  font-weight: 300;
+  color: rgb(71, 71, 71);
+  margin-bottom: 2%;
+}
+
+/* Orders table container */
+.order-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+/* Orders row separators */
+.order-table tr {
+  border-top: 1px solid rgb(211, 211, 211);
+  border-bottom: 1px solid rgb(211, 211, 211);
+}
+
+/* Orders table header cells */
+.order-table th {
+  text-align: right;
+  padding: 15px 10px;
+  color: rgb(145, 145, 145);
+  font-weight: 300;
+  font-size: 0.8rem;
+}
+
+/* Left align the first orders column */
+.order-table tr th:first-child,
+.order-table tr td:first-child {
+  text-align: left;
+}
+
+/* First column order status badge */
+.order-table tr td:first-child p {
+    background: rgb(255, 197, 197);
+    color: rgb(233, 120, 120);
+    width: 50%;
+    text-align: center;
+    border-radius: 2px;
+}
+
+/* Orders table trailing cell */
+.order-table tr td:last-child {
+  font-size: 0.6rem;
+}
+
+/* Orders table body cells */
+.order-table td {
+  padding: 10px 10px;
+  text-align: right;
+  font-weight: 400;
+  font-size: 0.9rem;
+  color: rgb(73, 73, 73);
+}
+
+/* Left-aligned helper */
+.align-left {
+  text-align: left;
+}
+
+/* Profit value color */
+.order-table td.profit {
+  color: rgb(72, 194, 55);
+}
+
+/* Loss value color */
+.order-table td.loss {
+  color: rgb(250, 118, 78);
+}
+
+/* Holding summary row */
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 5%;
+}
+
+/* Holding summary column */
+.col {
+  flex-basis: 33%;
+}
+
+/* Holding value heading */
+.col h5 {
+  font-size: 1.8rem;
+  color: rgb(71, 71, 71);
+  font-weight: 300;
+}
+
+/* Holding value unit label */
+.col h5 span {
+  font-weight: 300;
+  font-size: 0.9rem;
+}
+
+/* Holding description text */
+.col p {
+  font-size: 0.8rem;
+  color: rgb(153, 153, 153);
+  font-weight: 300;
+  margin-top: 2%;
+}
+
+/* Positive state for the last holding metric */
+.row .col:last-child h5 {
+  color: rgb(72, 194, 55);
+}
+
+/* Clickable item hover state */
+.item:hover {
+  cursor: pointer;
+}
+
+/* User greeting heading */
+.username h6 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  color: rgb(83, 83, 83);
+  margin-bottom: 20px;
+}
+
+/* Section divider */
+.divider {
+  border: none;
+  background: #d1d1d1;
+  height: 1px;
+  margin: 20px 0;
+  margin-bottom: 5%;
+}
+
+/* Summary section wrapper */
+.section {
+  padding-bottom: 2%;
+}
+
+/* Summary section heading row */
+.section span {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2%;
+}
+
+/* Summary section label text */
+.section span p {
+  display: inline-block;
+  font-size: 1.2rem;
+  font-weight: 300;
+}
+
+/* Summary section icon */
+.section-icon {
+  transform: scale(0.8);
+  color: rgb(112, 112, 112);
+  padding: 0;
+  margin: 0;
+  margin-right: 10px;
+}
+
+/* Summary data row */
+.data {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* Summary primary value */
+.data .first h3 {
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: rgb(71, 71, 71);
+}
+
+/* Summary supporting text */
+.data .first p {
+  font-size: 0.8rem;
+  color: rgb(136, 136, 136);
+}
+
+/* Summary profit accent */
+.data .first small {
+  font-size: 0.8rem;
+  color: rgb(72, 194, 55);
+}
+
+/* Summary profit heading */
+.data .first .profit {
+  color: rgb(72, 194, 55);
+}
+
+/* Summary divider line */
+.data hr {
+  border-left: 0.6px solid rgb(243, 242, 242);
+  height: 70px;
+}
+
+/* Summary detail text */
+.data .second p {
+  font-size: 0.8rem;
+  color: rgb(136, 136, 136);
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+/* Summary detail values */
+.data .second p span {
+  display: inline;
+  margin-left: 5%;
+  font-size: 0.9rem;
+  color: rgb(100, 100, 100);
+}
+
+/* Space after the summary section */
+.section hr {
+  margin-top: 6%;
+}
+
+/* Top bar container */
+.topbar-container {
+  width: 100%;
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  box-shadow: 0px 0px 4px 2px rgb(236, 235, 235);
+  box-sizing: border-box;
+  z-index: 9;
+}
+
+/* Market indices container */
+.indices-container {
+  flex-basis: 32%;
+  height: 100%;
+  padding: 10px 20px;
+  border-right: 1px solid rgb(224, 224, 224);
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* Nifty index group */
+.nifty {
+  flex-basis: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  z-index: -2;
+}
+
+/* Sensex index group */
+.sensex {
+  flex-basis: 40%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+/* Index item spacing */
+.nifty > *,
+.sensex > * {
+  margin-right: 8px;
+}
+
+/* Index label */
+.index {
+  font-size: 0.8rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  color: rgb(97, 97, 97);
+  white-space: nowrap;
+}
+
+/* Index value */
+.index-points {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: rgb(223, 73, 73);
+}
+
+/* Index percentage */
+.percent {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: rgb(146, 146, 146);
+}
+
+/* Index hover state */
+.index:hover {
+  cursor: pointer;
+}
+
+/* Watchlist sidebar container */
+.watchlist-container {
+  flex-basis: 32%;
+  height: 100%;
+  box-sizing: border-box;
+  box-shadow: 0px 0px 4px 1px rgb(236, 235, 235);
+  overflow-y: auto;
+  position: relative;
+}
+
+/* Search bar wrapper */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  position: relative;
+}
+
+/* Watchlist search input */
+.search {
+  width: 100%;
+  height: 6%;
+  border: none;
+  padding: 15px 20px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgb(241, 241, 241);
+  border-bottom: 0.8px solid rgb(235, 234, 234);
+}
+
+/* Search result count */
+.counts {
+  position: absolute;
+  right: 20px;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: rgb(177, 177, 177);
+}
+
+/* Watchlist list */
+.list {
+  list-style-type: none;
+  padding-bottom: 12%;
+}
+
+/* Watchlist list item */
+.list li {
+  border-bottom: 0.8px solid rgb(235, 234, 234);
+  padding: 12px 10px 12px 14px;
+  position: relative;
+}
+
+/* Watchlist item layout */
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 300;
+  font-size: 0.8rem;
+  position: relative;
+}
+
+/* Watchlist item info block */
+.item-info {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+/* Watchlist item spacing */
+.item-info > * {
+  margin-right: 8px;
+}
+
+/* Watchlist symbol text */
+.item-info span:nth-child(1) {
+  color: rgb(141, 141, 141);
+  flex: 1;
+}
+
+/* Watchlist price text */
+.item-info span:nth-child(2) {
+  color: rgb(223, 73, 73);
+  margin-right: 12px;
+  flex: 2;
+}
+
+/* Watchlist change text */
+.item-info span:nth-child(3) {
+  color: rgb(223, 73, 73);
+  flex: 1;
+}
+
+/* Watchlist action overlay */
+.actions {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  align-items: center;
+  justify-content: flex-end;
+  display: none;
+}
+
+/* Action buttons inside watchlist */
+.actions span button {
+  width: 40px;
+  height: 30px;
+  border-radius: 4px;
+  text-align: center;
+  margin-right: 8px;
+  cursor: pointer;
+}
+
+/* Buy button */
+.buy {
+  background-color: #4184f3;
+  color: #fff;
+  font-weight: 400;
+  font-size: 0.8rem;
+  border: 0.7px solid #4184f3;
+}
+
+/* Sell button */
+.sell {
+  background-color: #ff5722;
+  color: #fff;
+  font-weight: 400;
+  font-size: 0.8rem;
+  border: 0.7px solid #ff5722;
+}
+
+/* Generic action button */
+.action {
+  background-color: #fff;
+  border: 0.7px solid #9b9b9b;
+}
+
+/* Icon sizing */
+.icon {
+  transform: scale(0.7);
+  color: rgb(65, 65, 65);
+}
+
+/* Fixed watchlist footer */
+.watchlist-number {
+  height: 6%;
+  width: 32%;
+  box-sizing: border-box;
+  position: fixed;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  bottom: 1px;
+  padding: 20px 20px 20px 0;
+  left: 0;
+  border: 1px solid rgb(231, 231, 231);
+  z-index: 5;
+  background: #fff;
+}
+
+/* Watchlist footer list */
+.watchlist-number ul {
+  list-style-type: none;
+}
+
+/* Watchlist footer tabs */
+.watchlist-number ul li {
+  display: inline-block;
+  padding: 10px 20px;
+  border-right: 1px solid rgb(231, 231, 231);
+}
+
+/* First footer tab accent */
+.watchlist-number ul li:nth-child(1) {
+  color: rgb(223, 73, 73);
+}
+
+/* Down trend color */
+.down {
+  color: rgb(223, 73, 73);
+}
+
+/* Up trend color */
+.up {
+  color: rgb(103, 201, 136);
+}
+
+/* Watchlist settings icon */
+.settings {
+  transform: scale(0.8);
+  color: rgb(105, 105, 105);
+}
+
+/* Search input focus state */
+.search:focus {
+  outline: none;
+}
+
+/* Watchlist row hover state */
+.list li:hover {
+  cursor: move;
+  background-color: #f3f3f3;
+}
+
+/* Watchlist action reveal on hover */
+.list li:hover > .actions {
+  display: flex;
+  cursor: move;
+}
+
+/* Responsive layout */
+
+/* Desktop-to-tablet layout collapse */
+@media (max-width: 1200px) {
+  /* Stack the dashboard panels */
+  .dashboard-container {
+    flex-direction: column;
+    height: auto;
+    align-items: stretch;
+  }
+
+  /* Full-width panels on smaller screens */
+  .watchlist-container,
+  .content {
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  /* Move watchlist below the main content */
+  .watchlist-container {
+    order: 2;
+  }
+
+  /* Tighten main content padding */
+  .content {
+    order: 1;
+    padding: 24px 20px;
+  }
+
+  /* Wrap the top bar content */
+  .topbar-container {
+    flex-wrap: wrap;
+    height: auto;
+  }
+
+  /* Make header regions span full width */
+  .indices-container,
+  .menu-container {
+    width: 100%;
+    flex-basis: auto;
+  }
+
+  /* Relax menu spacing */
+  .menu-container {
+    gap: 16px;
+    padding: 14px 20px;
+  }
+
+  /* Push menu list to the right */
+  .menus {
+    flex: 1;
+    justify-content: flex-end;
+  }
+}
+
+/* Tablet layout adjustments */
+@media (max-width: 992px) {
+  /* Spread the market indices across the bar */
+  .indices-container {
+    justify-content: space-between;
+    padding: 10px 16px;
+  }
+
+  /* Compact index groups */
+  .nifty,
+  .sensex {
+    flex-basis: auto;
+    gap: 8px;
+  }
+
+  /* Allow menu items to wrap */
+  .menus ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    gap: 10px 14px;
+  }
+
+  /* Remove inline spacing from menu items */
+  .menus li {
+    display: block;
+    margin-right: 0;
+  }
+
+  /* Tweak profile spacing */
+  .profile {
+    margin-left: 12px;
+  }
+
+  /* Stack the summary rows */
+  .row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  /* Full-width summary columns */
+  .col {
+    flex-basis: auto;
+    width: 100%;
+  }
+
+  /* Let summary data fill the column */
+  .data {
+    width: 100%;
+  }
+}
+
+/* Mobile layout adjustments */
+@media (max-width: 768px) {
+  /* Reduce content padding on mobile */
+  .content {
+    padding: 18px 14px;
+  }
+
+  /* Stack the top menu vertically */
+  .menu-container {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  /* Shrink the logo on mobile */
+  .menu-container > img {
+    width: 44px !important;
+  }
+
+  /* Let the menu row wrap neatly */
+  .menus {
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  /* Keep menu items left aligned */
+  .menus ul {
+    justify-content: flex-start;
+  }
+
+  /* Hide the divider on mobile */
+  .menu-container hr {
+    display: none;
+  }
+
+  /* Remove profile left margin */
+  .profile {
+    margin-left: 0;
+  }
+
+  /* Preserve watchlist height on narrow screens */
+  .watchlist-container {
+    min-height: 320px;
+  }
+
+  /* Turn the footer into a normal block */
+  .watchlist-number {
+    position: static;
+    width: 100%;
+    padding: 12px 14px;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: 0;
+  }
+
+  /* Smaller search input text */
+  .search {
+    font-size: 0.8rem;
+    padding: 14px 16px;
+  }
+
+  /* Smaller count label */
+  .counts {
+    right: 16px;
+    font-size: 0.8rem;
+  }
+
+  /* Smaller greeting heading */
+  .username h6 {
+    font-size: 1.3rem;
+  }
+
+  /* Scale down labels for compact screens */
+  .section span p,
+  .col span p,
+  .index,
+  .index-points,
+  .percent {
+    font-size: 0.75rem;
+  }
+
+  /* Stack summary data vertically */
+  .data {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  /* Convert the summary divider to horizontal */
+  .data hr {
+    width: 100%;
+    height: 1px;
+    border-left: 0;
+  }
+
+  /* Allow summary detail lines to wrap */
+  .data .second p {
+    white-space: normal;
+  }
+
+  /* Tighten table padding */
+  .table {
+    padding: 18px 14px;
+  }
+
+  /* Enable horizontal scrolling for tables */
+  .order-table {
+    overflow-x: auto;
+  }
+
+  /* Keep tables readable by preserving minimum width */
+  .order-table table {
+    min-width: 560px;
+  }
+
+  /* Reduce large summary headings */
+  .row .col:last-child h5,
+  .col h5 {
+    font-size: 1.4rem;
+  }
+}
+
+/* Small-phone layout adjustments */
+@media (max-width: 540px) {
+  /* Remove shadow and use a bottom border for the top bar */
+  .topbar-container {
+    box-shadow: none;
+    border-bottom: 1px solid rgb(236, 235, 235);
+  }
+
+  /* Tighten side padding */
+  .indices-container,
+  .menu-container,
+  .content {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  /* Stack the market index labels */
+  .indices-container {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  /* Keep index rows compact */
+  .nifty,
+  .sensex {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  /* Reduce menu gaps */
+  .menus ul {
+    gap: 8px 10px;
+  }
+
+  /* Smaller menu text */
+  .menu {
+    font-size: 0.75rem;
+  }
+
+  /* Reduce watchlist minimum height */
+  .watchlist-container {
+    min-height: 280px;
+  }
+
+  /* Tighten footer tab spacing */
+  .watchlist-number ul li {
+    padding: 8px 12px;
+  }
+
+  /* Shrink section icons */
+  .section-icon {
+    transform: scale(0.7);
+  }
+
+  /* Smaller section titles */
+  .title {
+    font-size: 1.1rem;
+  }
+}
+
+/* Invisible overlay for watchlist items */
+.list li::before {
+  content: "";
+  background: transparent;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Footer tab hover state */
+.watchlist-number ul li:hover {
+  color: rgb(245, 104, 52);
+  cursor: pointer;
+  background: rgb(243, 243, 243);
+}
+
+/* Settings icon hover state */
+.settings:hover {
+  cursor: pointer;
+}
+
+/* Generic action hover state */
+.action:hover {
+  background-color: rgb(212, 212, 212);
+}

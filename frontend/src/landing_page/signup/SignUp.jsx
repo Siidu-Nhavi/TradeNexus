@@ -1,15 +1,10 @@
 import React from 'react';
-import Navbar from '../Navbar';
-import Footer from '../Footer';
+import { Link } from 'react-router-dom';
 
 function SignUp() {
-    return ( 
-        <>
-            <Navbar />
-            <h1>SignUP</h1>
-            <Footer />
-        </>
-     );
+    return (
+        <h1>Signup</h1>
+    );
 }
 
 export default SignUp;
