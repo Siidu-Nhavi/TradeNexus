@@ -1,11 +1,12 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
 dotenv.config();
 
-
 const app = express();
-const mongoose = require('mongoose');
+app.use(bodyParser.json());
 const PORT = process.env.PORT || 5001;
 const url = process.env.MONGO_URL;
 const { HoldingsModel } = require('./model/HoldingsModel');
