@@ -5,7 +5,7 @@ function Positions(){
   const [allPostions,setAllPostions] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allPositions")
+    fetch("http://localhost:5001/api/allPositions")
       .then((response) => response.json())
       .then((data) => setAllPostions(data))
       .catch((error) => console.error("Error fetching positions:", error));

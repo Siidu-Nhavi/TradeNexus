@@ -1,13 +1,26 @@
 import React, { useState, useEffect } from "react";
+import { VerticalGraph } from "./VerticalGraph";
 function Holdings() {
   const [allHoldings, setAllHoldings] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/allHoldings")
+    fetch("http://localhost:5001/api/allHoldings")
       .then((response) => response.json())
       .then((data) => setAllHoldings(data))
       .catch((error) => console.error("Error fetching holdings:", error));
   }, []);
+
+  const labels = allHoldings.map((subArray) => subArray['name']);
+  const data = {
+    labels,
+    datasets:[
+        {
+          label:"Stock Price",
+          data:allHoldings.map((stock) => stock.price),
+          backgroundColor:"rgba(255,99,132,0.5)",
+        },
+    ],
+  };
 
   return (
     <>
@@ -74,6 +87,7 @@ function Holdings() {
           <p>P&L</p>
         </div>
       </div>
+      <VerticalGraph data = {data} />
     </>
   );
 }
