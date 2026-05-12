@@ -35,8 +35,8 @@ function Menu() {
   /**
    * Handle logout - clears auth state and redirects to login
    */
-  const handleLogout = () => {
-    logout();
+  const handleLogout = async () => {
+    await logout();
     navigate('/');
   };
 

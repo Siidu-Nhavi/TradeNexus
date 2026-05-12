@@ -5,6 +5,7 @@ import { useAuth } from '../../context/AuthContext';
 function Login() {
     const navigate = useNavigate();
     const { login } = useAuth();
+    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5001';
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [flashMessage, setFlashMessage] = useState('');
@@ -33,11 +34,12 @@ function Login() {
         setFlashMessage('');
 
         try {
-            const response = await fetch('http://localhost:5000/api/auth/login', {
+            const response = await fetch(`${API_BASE_URL}/api/auth/login`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
+                credentials: 'include',
                 body: JSON.stringify({ email, password }),
             });
 
@@ -48,7 +50,7 @@ function Login() {
                 return;
             }
 
-            login(data.user, data.token);
+            login(data.user);
             showFlashMessage('Login successful. Redirecting...', 'success');
             window.clearTimeout(redirectTimerRef.current);
             redirectTimerRef.current = window.setTimeout(() => {

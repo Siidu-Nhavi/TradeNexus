@@ -8,6 +8,13 @@ import { useAuth } from '../context/AuthContext';
  */
 function ProtectedRoute({ children }) {
   const { isLoggedIn, loading } = useAuth();
+  const loginUrl = import.meta.env.VITE_FRONTEND_LOGIN_URL || 'http://localhost:5174/login';
+
+  useEffect(() => {
+    if (!loading && !isLoggedIn) {
+      window.location.replace(loginUrl);
+    }
+  }, [loading, isLoggedIn, loginUrl]);
 
   if (loading) {
     return (
@@ -25,9 +32,9 @@ function ProtectedRoute({ children }) {
     );
   }
 
-  // if (!isLoggedIn) {
-  //   return null; // Will redirect via useEffect
-  // }
+  if (!isLoggedIn) {
+    return null;
+  }
 
   return children;
 }

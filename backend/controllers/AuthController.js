@@ -2,6 +2,14 @@ const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../model/User');
 
+const cookieOptions = {
+    httpOnly: true,
+    secure: process.env.NODE_ENV === 'production',
+    sameSite: process.env.NODE_ENV === 'production' ? 'none' : 'lax',
+    maxAge: 24 * 60 * 60 * 1000,
+    path: '/',
+};
+
 // Register new user
 const register = async (req, res) => {
     try {
@@ -72,6 +80,8 @@ const login = async (req, res) => {
             { expiresIn: '24h' }
         );
 
+        res.cookie('authToken', token, cookieOptions);
+
         res.status(200).json({
             message: 'Login successful',
             token,
@@ -103,6 +113,8 @@ const refreshToken = async (req, res) => {
             { expiresIn: '24h' }
         );
 
+        res.cookie('authToken', token, cookieOptions);
+
         res.json({ token, message: 'Token refreshed successfully' });
     } catch (error) {
         console.error('Refresh token error:', error);
@@ -113,6 +125,7 @@ const refreshToken = async (req, res) => {
 // Logout user (optional - mostly client-side)
 const logout = (req, res) => {
     try {
+        res.clearCookie('authToken', { path: '/' });
         res.status(200).json({ message: 'Logged out successfully' });
     } catch (error) {
         res.status(500).json({ message: 'Error logging out', error: error.message });
