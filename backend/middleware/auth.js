@@ -1,9 +1,35 @@
 const jwt = require('jsonwebtoken');
 
+const getCookieToken = (req) => {
+    const authHeader = req.headers['authorization'];
+
+    if (authHeader && authHeader.startsWith('Bearer ')) {
+        return authHeader.slice(7);
+    }
+
+    const cookieHeader = req.headers.cookie;
+
+    if (!cookieHeader) {
+        return null;
+    }
+
+    const cookies = cookieHeader.split(';').reduce((accumulator, entry) => {
+        const [name, ...valueParts] = entry.trim().split('=');
+
+        if (!name) {
+            return accumulator;
+        }
+
+        accumulator[name] = decodeURIComponent(valueParts.join('='));
+        return accumulator;
+    }, {});
+
+    return cookies.authToken || null;
+};
+
 // Middleware to verify JWT token
 const authenticateToken = (req, res, next) => {
-    const authHeader = req.headers['authorization'];
-    const token = authHeader && authHeader.split(' ')[1]; // Bearer TOKEN
+    const token = getCookieToken(req);
 
     if (!token) {
         return res.status(401).json({ message: 'Access token required' });

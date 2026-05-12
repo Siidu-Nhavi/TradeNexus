@@ -1,19 +1,10 @@
-import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 function Navbar() {
-    const [isAuthenticated, setIsAuthenticated] = useState(Boolean(localStorage.getItem('authToken')));
-
-    useEffect(() => {
-        const syncAuthState = () => {
-            setIsAuthenticated(Boolean(localStorage.getItem('authToken')));
-        };
-
-        syncAuthState();
-        window.addEventListener('storage', syncAuthState);
-
-        return () => window.removeEventListener('storage', syncAuthState);
-    }, []);
+    const { isLoggedIn, loading } = useAuth();
+    const dashboardUrl = import.meta.env.VITE_DASHBOARD_URL || 'http://localhost:5173';
+    const isAuthenticated = !loading && isLoggedIn;
 
     return (
         <nav className="navbar navbar-expand-lg border-bottom bg-white sticky-top">
@@ -52,6 +43,13 @@ function Navbar() {
                                     </Link>
                                 </li>
                             </>
+                        )}
+                        {isAuthenticated && (
+                            <li className="nav-item">
+                                <a className="nav-link fw-semibold" href={dashboardUrl}>
+                                    Dashboard
+                                </a>
+                            </li>
                         )}
                         <li className="nav-item">
                             <Link className="nav-link fw-semibold " to="/about">About</Link>

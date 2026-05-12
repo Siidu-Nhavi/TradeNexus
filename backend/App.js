@@ -14,7 +14,25 @@ app.use(bodyParser.json());
 const PORT = process.env.PORT || 5001;
 const url = process.env.MONGO_URL;
 
-app.use(cors());
+const allowedOrigins = [
+    process.env.FRONTEND_URL,
+    process.env.DASHBOARD_URL,
+    'http://localhost:5173',
+    'http://localhost:5174',
+    'http://127.0.0.1:5173',
+    'http://127.0.0.1:5174',
+].filter(Boolean);
+
+app.use(cors({
+    origin: (origin, callback) => {
+        if (!origin || allowedOrigins.includes(origin)) {
+            return callback(null, true);
+        }
+
+        callback(new Error(`CORS blocked for origin: ${origin}`));
+    },
+    credentials: true,
+}));
 app.use(express.json());
 
 // Mount authentication routes
