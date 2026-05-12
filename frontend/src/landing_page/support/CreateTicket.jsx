@@ -16,8 +16,8 @@ function CreateTicket() {
             <div className="row text-start">
                 {/* 1. Account Opening */}
                 <div className="col-12 col-md-4 p-4 mb-4">
-                    <h4 className="fs-5 fw-semibold mb-3 text-center">
-                        <i className="fa fa-user-plus me-1"></i> Account Opening
+                    <h4 className="fs-5 fw-semibold mb-3 ">
+                        <i className="fa fa-user-plus support-icon"></i> Account Opening
                     </h4>
                     <a href="#" className="d-block mb-2 text-decoration-none">Online Account Opening</a>
                     <a href="#" className="d-block mb-2 text-decoration-none">Offline Account Opening</a>
@@ -30,8 +30,8 @@ function CreateTicket() {
 
                 {/* 2. Your Zerodha Account */}
                 <div className="col-12 col-md-4 p-4 mb-4">
-                    <h4 className="fs-5 fw-semibold mb-3 text-center">
-                        <i className="fa fa-id-card me-1"></i> Your Zerodha Account
+                    <h4 className="fs-5 fw-semibold mb-3 ">
+                        <i className="fa fa-id-card support-icon"></i> Your Zerodha Account
                     </h4>
                     <a href="#" className="d-block mb-2 text-decoration-none">Login Issues</a>
                     <a href="#" className="d-block mb-2 text-decoration-none">Profile Updates</a>
@@ -41,8 +41,8 @@ function CreateTicket() {
 
                 {/* 3. Funds */}
                 <div className="col-12 col-md-4 p-4 mb-4">
-                    <h4 className="fs-5 fw-semibold mb-3 text-center">
-                        <i className="fa fa-university me-1"></i> Funds
+                    <h4 className="fs-5 fw-semibold mb-3 ">
+                        <i className="fa fa-university support-icon"></i> Funds
                     </h4>
                     <a href="#" className="d-block mb-2 text-decoration-none">Adding Funds</a>
                     <a href="#" className="d-block mb-2 text-decoration-none">Withdrawals</a>
@@ -52,8 +52,8 @@ function CreateTicket() {
 
                 {/* 4. Trading & Kite */}
                 <div className="col-12 col-md-4 p-4 mb-4">
-                    <h4 className="fs-5 fw-semibold mb-3 text-center">
-                        <i className="fa fa-line-chart me-1"></i> Trading & Kite
+                    <h4 className="fs-5 fw-semibold mb-3 ">
+                        <i className="fa fa-line-chart support-icon"></i> Trading & Kite
                     </h4>
                     <a href="#" className="d-block mb-2 text-decoration-none">Kite Login</a>
                     <a href="#" className="d-block mb-2 text-decoration-none">Order Placement</a>
@@ -63,8 +63,9 @@ function CreateTicket() {
 
                 {/* 5. Brokerage & Charges */}
                 <div className="col-12 col-md-4 p-4 mb-4">
-                    <h4 className="fs-5 fw-semibold mb-3 text-center">
-                        <i className="fa fa-money me-1"></i> Brokerage & Charges
+                    <h4 className="fs-5 fw-semibold mb-3 ">
+                        <i class="fa-solid fa-money-bill-1 me-1"></i>
+                        Brokerage & Charges
                     </h4>
                     <a href="#" className="d-block mb-2 text-decoration-none">Equity Delivery</a>
                     <a href="#" className="d-block mb-2 text-decoration-none">Intraday & F&O</a>
@@ -74,7 +75,7 @@ function CreateTicket() {
 
                 {/* 6. Other Services */}
                 <div className="col-12 col-md-4 p-4 mb-4">
-                    <h4 className="fs-5 fw-semibold mb-3 text-center">
+                    <h4 className="fs-5 fw-semibold mb-3 ">
                         <i className="fa fa-cogs me-1"></i> Other Services
                     </h4>
                     <a href="#" className="d-block mb-2 text-decoration-none">Smallcase</a>

@@ -1,12 +1,6 @@
-// ============================================================================
-// MENU COMPONENT - Navigation Menu and User Profile
-// ============================================================================
-// This component provides navigation menu for different dashboard sections:
-// Dashboard, Orders, Holdings, Positions, Funds, and Apps.
-// It tracks the active menu item and shows user profile section with logo.
-
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useAuth } from "../context/AuthContext";
 
 /**
  * Menu Component
@@ -15,6 +9,7 @@ import { Link } from "react-router-dom";
  * - Navigation links for different dashboard sections
  * - Active menu highlighting based on current route
  * - User profile section with avatar and user ID
+ * - Logout functionality
  */
 function Menu() {
   // Track which menu item is currently active (0-5)
@@ -23,10 +18,9 @@ function Menu() {
   // Track if user profile dropdown is open
   const [isProfileOpen, setProfileOpen] = useState(false);
 
-  /**
-   * Handle menu item click - updates active menu state
-   * @param {number} index - Index of clicked menu item
-   */
+  const { user, logout } = useAuth();
+  const navigate = useNavigate();
+
   const handleMenuClick = (index) => {
     setActiveMenu(index);
   };
@@ -36,6 +30,14 @@ function Menu() {
    */
   const handleProfileClick = () => {
     setProfileOpen(!isProfileOpen); 
+  };
+
+  /**
+   * Handle logout - clears auth state and redirects to login
+   */
+  const handleLogout = () => {
+    logout();
+    navigate('/');
   };
 
   // CSS class names for styling
@@ -109,9 +111,37 @@ function Menu() {
 
         {/* User profile section with avatar and user ID */}
         <div className="profile" onClick={handleProfileClick}>
-          <div className="avatar">ZU</div>
-          <p className="username">USERID</p>
+          <div className="avatar">{user?.username?.substring(0, 2).toUpperCase() || "ZU"}</div>
+          <p className="username">{user?.username || "USERID"}</p>
         </div>
+
+        {/* Logout button - only visible to logged in users */}
+        {isProfileOpen && (
+          <div className="profile-dropdown" style={{
+            marginTop: "10px",
+            padding: "10px",
+            backgroundColor: "#f5f5f5",
+            borderRadius: "5px",
+            cursor: "pointer"
+          }}>
+            <button
+              onClick={handleLogout}
+              style={{
+                width: "100%",
+                padding: "8px",
+                border: "none",
+                backgroundColor: "#dc3545",
+                color: "white",
+                borderRadius: "3px",
+                cursor: "pointer",
+                fontSize: "14px",
+                fontWeight: "600"
+              }}
+            >
+              Logout
+            </button>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -4,7 +4,7 @@ import GeneralContext from "./GeneralContext";
 
 import "./BuyActionWindow.css";
 
-// This component represents the buy action window where users can specify the quantity and price for a stock they want to buy. It also handles the logic for placing a new order by sending a POST request to the backend server. The component uses the GeneralContext to manage the state of the buy window and to close it when necessary.
+// This component represents the buy action window where users can specify the quantity and price for a stock they want to buy.
 const BuyActionWindow = ({ uid }) => {
 
   const { closeBuyWindow } = useContext(GeneralContext);
@@ -15,12 +15,10 @@ const BuyActionWindow = ({ uid }) => {
 
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
-  // The handleBuyClick function is called when the user clicks the "Buy" button. It sends a POST request to the backend server with the order details (name, quantity, price, and mode). If the request is successful, it logs the response data; otherwise, it logs an error message. After placing the order, it calls closeBuyWindow to close the buy action window.
 
-  //the reson to use fetch instead of axios is to avoid adding an extra dependency to the project and to utilize the built-in capabilities of JavaScript for making HTTP requests. Fetch provides a simple and modern interface for handling network requests, and it is widely supported in modern browsers. By using fetch, we can keep our codebase lightweight and avoid potential issues with third-party libraries while still achieving the desired functionality for placing orders.
   const handleBuyClick = async () => {
     try {
-      const response = await fetch("http://localhost:5000/newOrder", {
+      const response = await fetch("http://localhost:5001/api/newOrder", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

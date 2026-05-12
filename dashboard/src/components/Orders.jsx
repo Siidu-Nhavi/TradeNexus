@@ -9,7 +9,7 @@ function Orders() {
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:5000/allOrders");
+      const response = await fetch("http://localhost:5001/api/allOrders");
       if (!response.ok) {
         throw new Error("Failed to fetch orders");
       }
@@ -39,16 +39,16 @@ function Orders() {
   }, []);
 
   if (loading) {
-    return <div className="orders"><p>Loading orders...</p></div>;
+    return <div className="order-table"><p>Loading orders...</p></div>;
   }
 
   if (error) {
-    return <div className="orders"><p>Error: {error}</p></div>;
+    return <div className="order-table"><p>Error: {error}</p></div>;
   }
 
   if (orders.length === 0) {
     return (
-      <div className="orders">
+      <div className="order-table">
         <div className="no-orders">
           <p>You haven't placed any orders today</p>
 
@@ -61,7 +61,8 @@ function Orders() {
   }
 
   return (
-    <div className="orders">
+    <div className="order-table">
+      <h3 className="title">Orders ({orders.length})</h3>
       <table>
         <thead>
           <tr>
