@@ -1,6 +1,6 @@
 import React from 'react';
 import TopBar from './components/TopBar';
-import Dashboard from './components/dashboard';
+import Dashboard from './components/Dashboard';
 import { GeneralContextProvider } from './components/GeneralContext';
 import { AuthProvider } from './context/AuthContext';
 

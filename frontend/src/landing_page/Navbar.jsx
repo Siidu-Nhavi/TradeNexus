@@ -3,7 +3,6 @@ import { useAuth } from '../context/AuthContext';
 
 function Navbar() {
     const { isLoggedIn, loading } = useAuth();
-    const dashboardUrl = import.meta.env.VITE_DASHBOARD_URL || 'http://localhost:5173';
     const isAuthenticated = !loading && isLoggedIn;
 
     return (
@@ -46,9 +45,9 @@ function Navbar() {
                         )}
                         {isAuthenticated && (
                             <li className="nav-item">
-                                <a className="nav-link fw-semibold" href={dashboardUrl}>
+                                <Link className="nav-link fw-semibold" to="/dashboard">
                                     Dashboard
-                                </a>
+                                </Link>
                             </li>
                         )}
                         <li className="nav-item">
