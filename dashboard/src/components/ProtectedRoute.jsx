@@ -8,7 +8,18 @@ import { useAuth } from '../context/AuthContext';
  */
 function ProtectedRoute({ children }) {
   const { isLoggedIn, loading } = useAuth();
-  const loginUrl = import.meta.env.VITE_FRONTEND_LOGIN_URL || 'http://localhost:5174/login';
+  const loginUrl = (() => {
+    const configuredUrl = import.meta.env.VITE_FRONTEND_LOGIN_URL?.trim();
+
+    if (configuredUrl) {
+      return configuredUrl;
+    }
+
+    const currentUrl = new URL(window.location.href);
+    const fallbackPort = currentUrl.port === '5173' ? '5174' : '5173';
+
+    return `${currentUrl.protocol}//${currentUrl.hostname}:${fallbackPort}/login`;
+  })();
 
   useEffect(() => {
     if (!loading && !isLoggedIn) {
