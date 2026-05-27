@@ -1,11 +1,11 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
+import { API_BASE_URL } from '../../config/env';
 
 function Login() {
     const navigate = useNavigate();
     const { login } = useAuth();
-    const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5001';
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [flashMessage, setFlashMessage] = useState('');

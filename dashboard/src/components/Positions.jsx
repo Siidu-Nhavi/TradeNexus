@@ -1,11 +1,12 @@
 import React, { useState, useEffect, use } from 'react';
+import { API_BASE_URL } from '../config/env';
 
 
 function Positions(){
   const [allPostions,setAllPostions] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5001/api/allPositions")
+    fetch(`${API_BASE_URL}/api/allPositions`)
       .then((response) => response.json())
       .then((data) => setAllPostions(data))
       .catch((error) => console.error("Error fetching positions:", error));

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { API_BASE_URL } from "../config/env";
 
 function Orders() {
   const [orders, setOrders] = useState([]);
@@ -9,7 +10,7 @@ function Orders() {
   const fetchOrders = async () => {
     try {
       setLoading(true);
-      const response = await fetch("http://localhost:5001/api/allOrders");
+      const response = await fetch(`${API_BASE_URL}/api/allOrders`);
       if (!response.ok) {
         throw new Error("Failed to fetch orders");
       }

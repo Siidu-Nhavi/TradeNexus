@@ -1,6 +1,7 @@
 import React, { useState, useContext } from "react";
 
 import GeneralContext from "./GeneralContext";
+import { API_BASE_URL } from "../config/env";
 
 import "./BuyActionWindow.css";
 
@@ -8,7 +9,6 @@ import "./BuyActionWindow.css";
 const BuyActionWindow = ({ uid }) => {
 
   const { closeBuyWindow } = useContext(GeneralContext);
-  const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://localhost:5001';
 
   const [stockQuantity, setStockQuantity] = useState(1);
 

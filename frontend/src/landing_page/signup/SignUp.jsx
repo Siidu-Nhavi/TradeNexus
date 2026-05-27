@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { API_BASE_URL } from '../../config/env';
 
 
 function SignUp() {
@@ -33,7 +34,7 @@ function SignUp() {
         setFlashMessage('');
 
         try {
-            const response = await fetch('http://localhost:5001/api/auth/register', {
+            const response = await fetch(`${API_BASE_URL}/api/auth/register`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { VerticalGraph } from "./VerticalGraph";
+import { API_BASE_URL } from "../config/env";
 function Holdings() {
   const [allHoldings, setAllHoldings] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5001/api/allHoldings")
+    fetch(`${API_BASE_URL}/api/allHoldings`)
       .then((response) => response.json())
       .then((data) => setAllHoldings(data))
       .catch((error) => console.error("Error fetching holdings:", error));

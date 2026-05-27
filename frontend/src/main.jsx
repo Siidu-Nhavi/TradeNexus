@@ -14,26 +14,12 @@ import Footer from './landing_page/Footer.jsx';
 import Navbar from './landing_page/Navbar.jsx';
 import PageNotFound from './PageNotFound.jsx';
 import { AuthProvider } from './context/AuthContext.jsx';
+import { DASHBOARD_URL } from './config/env';
 
 const DashboardRedirect = () => {
-  const resolveDashboardUrl = () => {
-    const configuredUrl = import.meta.env.VITE_DASHBOARD_URL?.trim();
-
-    if (configuredUrl) {
-      return configuredUrl;
-    }
-
-    const currentUrl = new URL(window.location.href);
-    const fallbackPort = currentUrl.port === '5173' ? '5174' : '5173';
-
-    return `${currentUrl.protocol}//${currentUrl.hostname}:${fallbackPort}`;
-  };
-
-  const dashboardUrl = resolveDashboardUrl();
-
   useEffect(() => {
-    window.location.replace(dashboardUrl);
-  }, [dashboardUrl]);
+    window.location.replace(DASHBOARD_URL);
+  }, []);
 
   return null;
 };

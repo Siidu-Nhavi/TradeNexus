@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { FRONTEND_LOGIN_URL } from '../config/env';
 
 /**
  * ProtectedRoute Component
@@ -8,24 +9,12 @@ import { useAuth } from '../context/AuthContext';
  */
 function ProtectedRoute({ children }) {
   const { isLoggedIn, loading } = useAuth();
-  const loginUrl = (() => {
-    const configuredUrl = import.meta.env.VITE_FRONTEND_LOGIN_URL?.trim();
-
-    if (configuredUrl) {
-      return configuredUrl;
-    }
-
-    const currentUrl = new URL(window.location.href);
-    const fallbackPort = currentUrl.port === '5173' ? '5174' : '5173';
-
-    return `${currentUrl.protocol}//${currentUrl.hostname}:${fallbackPort}/login`;
-  })();
 
   useEffect(() => {
     if (!loading && !isLoggedIn) {
-      window.location.replace(loginUrl);
+      window.location.replace(FRONTEND_LOGIN_URL);
     }
-  }, [loading, isLoggedIn, loginUrl]);
+  }, [loading, isLoggedIn]);
 
   if (loading) {
     return (
