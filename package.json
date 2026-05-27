@@ -1,0 +1,17 @@
+{
+  "name": "tradenexus",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "dashboard"
+  ],
+  "scripts": {
+    "build": "npm run build --workspace frontend",
+    "build:frontend": "npm run build --workspace frontend",
+    "build:dashboard": "npm run build --workspace dashboard",
+    "dev": "npm run dev --workspace frontend",
+    "dev:frontend": "npm run dev --workspace frontend",
+    "dev:dashboard": "npm run dev --workspace dashboard",
+    "install:all": "npm install --workspaces"
+  }
+}
