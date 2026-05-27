@@ -1,7 +1,10 @@
-import React from 'react';
 import { Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 
 function Navbar() {
+    const { isLoggedIn, loading } = useAuth();
+    const isAuthenticated = !loading && isLoggedIn;
+
     return (
         <nav className="navbar navbar-expand-lg border-bottom bg-white sticky-top">
             <div className="container-fluid">
@@ -20,20 +23,44 @@ function Navbar() {
                 {/* Nav links */}
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
+                        {isAuthenticated ? (
+                            <li className="nav-item">
+                                <Link className="nav-link fw-semibold " to="/logout">
+                                    Logout
+                                </Link>
+                            </li>
+                        ) : (
+                            <>
+                                <li className="nav-item">
+                                    <Link className="nav-link fw-semibold " to="/login">
+                                        Login
+                                    </Link>
+                                </li>
+                                <li className="nav-item">
+                                    <Link className="nav-link fw-semibold " to="/signup">
+                                        Signup
+                                    </Link>
+                                </li>
+                            </>
+                        )}
+                        {isAuthenticated && (
+                            <li className="nav-item">
+                                <Link className="nav-link fw-semibold" to="/dashboard">
+                                    Dashboard
+                                </Link>
+                            </li>
+                        )}
                         <li className="nav-item">
-                            <Link className="nav-link fw-semibold text-primary" to ="/signup">Signup</Link>
+                            <Link className="nav-link fw-semibold " to="/about">About</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link fw-semibold text-primary" to ="/about">About</Link>
+                            <Link className="nav-link fw-semibold " to="/product">Product</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link fw-semibold text-primary" to ="/product">Product</Link>
+                            <Link className="nav-link fw-semibold " to="/pricing">Pricing</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link fw-semibold text-primary" to ="/pricing">Pricing</Link>
-                        </li>
-                        <li className="nav-item">
-                            <Link className="nav-link fw-semibold text-primary" to ="/support">Support</Link>
+                            <Link className="nav-link fw-semibold " to="/support">Support</Link>
                         </li>
                     </ul>
                 </div>

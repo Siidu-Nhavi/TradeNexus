@@ -4,16 +4,18 @@
   "description": "",
   "main": "App.js",
   "scripts": {
-    "start": "nodemon App.js"
+    "start": "node App.js"
   },
   "keywords": [],
   "author": "Siddu Nhavi",
   "license": "ISC",
   "dependencies": {
+    "bcrypt": "^6.0.0",
     "body-parser": "^2.2.2",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",
+    "jsonwebtoken": "^9.0.3",
     "local": "^0.3.3",
     "mongoose": "^9.6.2",
     "passport": "^0.7.0",

@@ -10,7 +10,7 @@ function Hero() {
                 <div className="col-lg-8">
                     <img
                         src="/Assets/homeHero.png"
-                        alt="Illustration of investing platform"
+                        alt="Hero Image"
                         className="img-fluid mb-5"
                     />
 

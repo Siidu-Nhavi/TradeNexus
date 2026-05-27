@@ -1,16 +1,27 @@
-import React,{useState,useEffect} from "react";
-import { use } from "react";
+import React, { useState, useEffect } from "react";
+import { VerticalGraph } from "./VerticalGraph";
+import { API_BASE_URL } from "../config/env";
+function Holdings() {
+  const [allHoldings, setAllHoldings] = useState([]);
 
-function Holdings(){
-
-  const [allHoldings,setAllHoldings] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5001/allHoldings")
+    fetch(`${API_BASE_URL}/api/allHoldings`)
       .then((response) => response.json())
       .then((data) => setAllHoldings(data))
       .catch((error) => console.error("Error fetching holdings:", error));
   }, []);
-  console.log(allHoldings);
+
+  const labels = allHoldings.map((subArray) => subArray['name']);
+  const data = {
+    labels,
+    datasets:[
+        {
+          label:"Stock Price",
+          data:allHoldings.map((stock) => stock.price),
+          backgroundColor:"rgba(255,99,132,0.5)",
+        },
+    ],
+  };
 
   return (
     <>
@@ -30,9 +41,35 @@ function Holdings(){
               <th>Day chg.</th>
             </tr>
           </thead>
+          <tbody>
+            {allHoldings.map((stock, index) => {
+              const qty = Number(stock.qty) || 0;
+              const avg = Number(stock.avg) || 0;
+              const price = Number(stock.price) || 0;
+              const curValue = price * qty;
+              const profit = curValue - avg * qty;
+              const isProfit = profit >= 0;
+              const profClass = isProfit ? "profit" : "loss";
+              const dayClass = stock.isLoss ? "loss" : "profit";
+
+              return (
+                <tr key={index}>
+                  <td>{stock.name}</td>
+                  <td>{qty}</td>
+                  <td>{avg.toFixed(2)}</td>
+                  <td>{price.toFixed(2)}</td>
+                  <td>{curValue.toFixed(2)}</td>
+                  <td className={profClass}>{profit.toFixed(2)}</td>
+                  <td className={profClass}>{stock.net}</td>
+                  <td className={dayClass}>{stock.day}</td>
+                </tr>
+              );
+            })}
+            
+          </tbody>
         </table>
       </div>
-
+     
       <div className="row">
         <div className="col">
           <h5>
@@ -51,10 +88,9 @@ function Holdings(){
           <p>P&L</p>
         </div>
       </div>
+      <VerticalGraph data = {data} />
     </>
   );
-};
-
-
+}
 
 export default Holdings;
